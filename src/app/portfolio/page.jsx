@@ -116,9 +116,9 @@ const Portfolio = () => {
                 d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "
               />
             </defs>
-            <text fill="#000">
+            <text fill="#000" className="dark:fill-white">
               <textPath xlinkHref="#circlePath" className="text-xl">
-                Front-end Developer and UI Designer
+                Front-end Developer and AI Engineer
               </textPath>
             </text>
           </motion.svg>

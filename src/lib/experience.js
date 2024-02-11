@@ -52,29 +52,29 @@ return {years,months,days}
   // const adjustedMonthDiff = adjustedYearDiff === 0 ? monthDiff : (adjustedYearDiff * 12 + monthDiff + dayDiff) - (adjustedYearDiff * 12);
   // const adjustedDayDiff = adjustedMonthDiff === 0 ? dayDiff : (adjustedMonthDiff * 30 + dayDiff) % 31; // Use 30 as an average month length
 
-  // // Return the formatted experience string
+   // Return the formatted experience string
   // return `${adjustedYearDiff} years ,  ${adjustedMonthDiff} months and ${adjustedDayDiff} days)`;
 }
 
 
 // new code TODO: use this!
 // function calculateExperienceWithIncrements(currentYears, currentMonths, currentDays) {
-//   // Ensure valid input types
+//   Ensure valid input types
 //   if (typeof currentYears !== 'number' ||
 //       typeof currentMonths !== 'number' ||
 //       typeof currentDays !== 'number') {
 //     throw new Error('Invalid input types. All arguments must be numbers.');
 //   }
 
-//   // Create a Date object representing the current date
+//   Create a Date object representing the current date
 //   const currentDate = new Date();
 
-//   // Set the date components based on the provided experience
+// Set the date components based on the provided experience
 //   currentDate.setFullYear(currentDate.getFullYear() - currentYears);
 //   currentDate.setMonth(currentDate.getMonth() + currentMonths);
 //   currentDate.setDate(currentDate.getDate() + currentDays);
 
-//   // Define the increments per year, month, and day
+   // Define the increments per year, month, and day
 //   const yearsIncrement = 1;
 //   const monthsIncrement = 1;
 //   const daysIncrement = 1;

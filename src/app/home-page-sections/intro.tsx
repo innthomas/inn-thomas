@@ -99,9 +99,12 @@ export default function Intro() {
         animate={{ opacity: 1, y: 0 }}
         className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
       >
-        <span className="font-bold text-[#7f1d1d]">Hello</span>, I am{" "}
+        <span className="font-bold text-[#fb7185] dark:text-[#e11d48]">
+          Hello
+        </span>
+        , I am{" "}
         {/* <span className="font-bold text-blue-950 underline">Innocent,</span>  */}
-        <div className="sm:text-6xl text-blue-950 drop-shadow-lg">
+        <div className="sm:text-6xl text-blue-950 drop-shadow-lg dark:text-slate-200">
           {myName.split("").map((letter, index) => (
             <motion.span
               key={index}
@@ -118,13 +121,19 @@ export default function Intro() {
           ))}
         </div>
         a <span className="font-bold">full-stack developer</span> with{" "}
-        <span className="font-bold text-[#082f49]">
-        
-          {years} years, {months} months, and {days} days
+        <span className="font-bold text-[#082f49] dark:text-[#bae6fd]">
+          {years} {} year{years > 1 ? "s" : ""}, {months} month
+          {months > 1 ? "s" : ""}, and {days} day{days > 1 ? "s" : ""}
         </span>{" "}
         of experience. I enjoy building{" "}
-        <span className="italic text-[#365314]">sites & apps</span>, especially
-        with <span className="underline text-[#052e16] text-bold">React (Next.js)</span>.
+        <span className="italic text-[#365314] dark:text-[#a5b4fc]">
+          sites & apps
+        </span>
+        , especially with{" "}
+        <span className="underline text-[#052e16] text-bold dark:text-[#60a5fa]">
+          React (Next.js)
+        </span>
+        .
       </motion.h1>
       <motion.div
         initial={{ opacity: 0, y: 100 }}
@@ -150,18 +159,18 @@ export default function Intro() {
         </Link>
         <a
           href="/CV.pdf"
-          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack "
+          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:text-[#1d4ed8]"
           download={true}
         >
           Download CV{" "}
-          <HiDownload className="opacity-70 group-hover:translate-x-3 transition" />
+          <HiDownload className="opacity-70 group-hover:translate-x-3 transition dark:text-[#1d4ed8]" />
         </a>
         <a
           href="https://www.linkedin.com/in/innocent-thomas-9ba69911a/"
           target="_blank"
           title="linkedin"
           rel="noopener"
-          className="bg-white p-4 flex items-center gap-2 rounded-full text-[1.35rem] focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer border borderBlack hover:text-gray-950"
+          className="bg-white p-4 flex items-center gap-2 rounded-full text-[1.35rem] focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer border borderBlack hover:text-gray-950 dark:text-[#0c4a6e]"
         >
           <BsLinkedin />
         </a>
@@ -170,7 +179,7 @@ export default function Intro() {
           target="_blank"
           title="linkedin"
           rel="noopener"
-          className="bg-white p-4 flex items-center gap-2 rounded-full text-[1.35rem] focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack hover:text-gray-950"
+          className="bg-white p-4 flex items-center gap-2 rounded-full text-[1.35rem] focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack hover:text-gray-950 dark:text-[#0c4a6e]"
         >
           <FaGithubSquare />
         </a>

@@ -64,11 +64,11 @@ const ContactPage = () => {
         </div>
         {/* FORM CONTAINER */}
         <div className=" h-[calc(100vh-20vh)]">
-           <p className="text-gray-700 mt-6 ">
+           <p className="text-gray-700 mt-6 text-2xl dark:text-white">
         Please contact me directly at{" "}
         <a className="underline" href="mailto:innthomas00158@gmail.com">
           innthomas00158@gmail.com
-        </a>{" "}
+        </a>{" "}<br/>
         or through this form.
       </p>
         <form
