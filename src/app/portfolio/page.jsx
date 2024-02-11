@@ -5,55 +5,22 @@ import SectionHeading from "@/components/section-heading"
 import Image from "next/image";
 import Link from "next/link";
 
-function increaseExperience(years, months, days) {
-  // Create a Date object to represent the starting date
-  const startDate = new Date();
-  startDate.setFullYear(startDate.getFullYear() - years);
-  startDate.setMonth(startDate.getMonth() - months);
-  startDate.setDate(startDate.getDate() - days);
+// new code TODO: use this!
 
-  // Calculate the desired ending date
-  const endingYears = years + 1;
-  const endingMonths = 12 * endingYears + months;
-  const endingDays = Math.floor(endingMonths / 12); // Get full years from months
-  let remainingMonths = endingMonths % 12; // Keep remaining months
+  // Assuming you started working in January 2010
+  const startDate = new Date(2020, 0, 1); // January is month 0
+  const currentDate = new Date();
+  const totalMilliseconds = currentDate - startDate;
 
-  // Adjust for February to avoid incorrect rollover due to 29-day leap years
-  if (remainingMonths === 2) {
-    const currentYear = startDate.getFullYear();
-    const isLeapYear = currentYear % 4 === 0 && (currentYear % 100 !== 0 || currentYear % 400 === 0);
-    const maxDays = isLeapYear ? 29 : 28;
-    // Prevent exceeding February's max days by adjusting days or months as needed
-    if (days > maxDays) {
-      const dayOverflow = days - maxDays;
-      days = maxDays;
-      remainingMonths += Math.floor(dayOverflow / 31); // Convert overflow days to months
-    }
-  }
-
-  // Set the ending date using year, remaining months, and adjusted days
-  const endDate = new Date();
-  endDate.setFullYear(startDate.getFullYear() + endingYears);
-  endDate.setMonth(endingMonths % 12); // Remainder after full years
-  endDate.setDate(days);
-
-  // Calculate difference in years, months, and days
-  const yearDiff = endDate.getFullYear() - startDate.getFullYear();
-  const monthDiff = endDate.getMonth() - startDate.getMonth();
-  const dayDiff = endDate.getDate() - startDate.getDate();
-
-  // Handle negative results for cases where starting date exceeds ending date
-  const adjustedYearDiff = (yearDiff * 12 + monthDiff + dayDiff) < 0 ? -yearDiff : yearDiff;
-  const adjustedMonthDiff = adjustedYearDiff === 0 ? monthDiff : (adjustedYearDiff * 12 + monthDiff + dayDiff) - (adjustedYearDiff * 12);
-  const adjustedDayDiff = adjustedMonthDiff === 0 ? dayDiff : (adjustedMonthDiff * 30 + dayDiff) % 31; // Use 30 as an average month length
-
-  // Return the formatted experience string
-  return `${adjustedYearDiff} years, ${adjustedMonthDiff} months, ${adjustedDayDiff} days`;
-}
-
-// Example usage:
-const experienceString = increaseExperience(5, 0, 0);
-console.log(experienceString); // Output: "6 years, 0 months, 0 days"
+  // Convert milliseconds to years, months, and days
+  const totalDays = Math.floor(totalMilliseconds / (1000 * 60 * 60 * 24));
+  const years = Math.floor(totalDays / 365);
+  const remainingDays = totalDays % 365;
+  const months = Math.floor(remainingDays / 30);
+  const days = remainingDays % 30;
+  console.log('====================================');
+  console.log(`years:${years}, months:${months} and days:${days}`);
+  console.log('====================================');
 
 const items = [
   {
@@ -167,4 +134,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default Portfolio

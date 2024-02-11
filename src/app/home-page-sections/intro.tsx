@@ -14,8 +14,9 @@ import { increaseExperience } from "@/lib/experience"
 
 
 export default function Intro() {
-  const experienceString = increaseExperience(5, 0, 0);
-  console.log("rendered in intro:",experienceString); // Output: "6 years, 0 months, 0 days"
+  
+ console.log("home:",increaseExperience())
+ const {years,months,days}= increaseExperience()
   const myName = "innocent thomas";
   const imageVariants = {
     initial: {
@@ -118,8 +119,8 @@ export default function Intro() {
         </div>
         a <span className="font-bold">full-stack developer</span> with{" "}
         <span className="font-bold text-[#082f49]">
-          {/* 5 years */}
-          {experienceString}
+        
+          {years} years, {months} months, and {days} days
         </span>{" "}
         of experience. I enjoy building{" "}
         <span className="italic text-[#365314]">sites & apps</span>, especially
